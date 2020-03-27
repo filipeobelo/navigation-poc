@@ -18,7 +18,6 @@ class SecondaryFragment : Fragment() {
     private var refusedAuthentication: Boolean = false
     private lateinit var viewModel: SecondaryViewModel
     private lateinit var navController: NavController
-    val args by navArgs<SecondaryFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +38,9 @@ class SecondaryFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+
+
+        //Todo: transferir lógica para view model
         if (requireActivity().getSharedPreferences(
                 getString(R.string.preference_file_key),
                 Context.MODE_PRIVATE
@@ -50,8 +52,7 @@ class SecondaryFragment : Fragment() {
                 requireActivity().finish()
             } else {
                 refusedAuthentication = true
-                val directions =
-                    SecondaryFragmentDirections.actionSecondaryFragmentToLoginActivity(args.isDeepLink)
+                val directions = SecondaryFragmentDirections.actionSecondaryFragmentToLoginActivity()
                 navController.navigate(directions)
             }
         }

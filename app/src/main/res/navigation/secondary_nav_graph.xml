@@ -12,7 +12,7 @@
         tools:layout="@layout/secondary_fragment">
         <action
             android:id="@+id/action_secondaryFragment_to_loginActivity"
-            app:destination="@id/loginNavigation" />
+            app:destination="@id/loginActivity" />
 
         <argument
             android:name="isDeepLink"
@@ -20,6 +20,15 @@
             app:argType="boolean" />
     </fragment>
 
-    <include app:graph="@navigation/login_nav_module" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.amenavigation.LoginActivity"
+        android:label="LoginActivity">
+
+        <argument
+            android:name="isDeepLink"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </activity>
 
 </navigation>
