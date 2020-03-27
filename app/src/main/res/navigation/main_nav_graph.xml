@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/firstTab">
+
+    <fragment
+        android:id="@+id/firstTab"
+        android:name="com.example.amenavigation.ui.main.FirstFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/first_fragment">
+        <action
+            android:id="@+id/action_firstTab_to_thirdTab"
+            app:destination="@id/thirdTab" />
+        <action
+            android:id="@+id/action_firstTab_to_secondTab"
+            app:destination="@id/secondTabNeastedGraph" />
+        <action
+            android:id="@+id/action_firstTab_to_fourthTab"
+            app:destination="@id/fourthTab" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/thirdTab"
+        android:name="com.example.amenavigation.ui.main.ThirdFragment"
+        android:label="third_fragment"
+        tools:layout="@layout/third_fragment" />
+
+    <fragment
+        android:id="@+id/fourthTab"
+        android:name="com.example.amenavigation.ui.main.FourthFragment"
+        android:label="fourth_fragment"
+        tools:layout="@layout/fourth_fragment" />
+
+    <include app:graph="@navigation/second_tab_nested_graph" />
+
+</navigation>

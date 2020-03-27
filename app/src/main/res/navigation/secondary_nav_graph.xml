@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/secondary_nav_graph"
+    app:startDestination="@id/secondaryFragment">
+
+    <fragment
+        android:id="@+id/secondaryFragment"
+        android:name="com.example.amenavigation.ui.secondary.SecondaryFragment"
+        android:label="secondary_fragment"
+        tools:layout="@layout/secondary_fragment">
+        <action
+            android:id="@+id/action_secondaryFragment_to_loginActivity"
+            app:destination="@id/loginNavigation" />
+
+        <argument
+            android:name="isDeepLink"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+
+    <include app:graph="@navigation/login_nav_module" />
+
+</navigation>

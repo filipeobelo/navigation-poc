@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/secondTabNeastedGraph"
+    app:startDestination="@id/secondTab">
+    <fragment
+        android:id="@+id/secondTab"
+        android:name="com.example.amenavigation.ui.main.SecondFragment"
+        android:label="second_fragment"
+        tools:layout="@layout/second_fragment">
+        <action
+            android:id="@+id/action_secondTab_to_secondaryActivity"
+            app:destination="@id/secondaryActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/secondaryActivity"
+        android:name="com.example.amenavigation.SecondaryActivity"
+        android:label="SecondaryActivity"
+        tools:layout="@layout/secondary_activity">
+
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="www.navigation.com/secondaryFlow" />
+
+        <argument
+            android:name="isDeepLink"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </activity>
+</navigation>
