@@ -52,7 +52,7 @@ class SecondaryFragment : Fragment() {
                 requireActivity().finish()
             } else {
                 refusedAuthentication = true
-                val directions = SecondaryFragmentDirections.actionSecondaryFragmentToLoginActivity()
+                val directions = SecondaryFragmentDirections.actionSecondaryFragmentToLoginActivity(false)
                 navController.navigate(directions)
             }
         }
